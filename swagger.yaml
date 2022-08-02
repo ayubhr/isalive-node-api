@@ -1,0 +1,112 @@
+tags:
+- name: sports
+  description: sports API
+
+paths:
+# [GET] sports
+  /sports:
+    get:
+      summary: Find All sports
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+# [GET] countries
+  /countries/{sport_id}:
+    get:
+      summary: Find All countries
+      parameters:
+        - in: path
+          name: sport_id
+          schema:
+            type: integer
+          required: true
+          description: Sport ID params
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+# [GET] tournaments
+  /tournaments/{sport_id}/{country_id}:
+    get:
+      summary: Find All tournaments
+      parameters:
+        - in: path
+          name: sport_id
+          schema:
+            type: integer
+          required: true
+          description: Sport ID params    
+        - in: path
+          name: country_id
+          schema:
+            type: integer
+          required: true
+          description: Country ID params             
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+# [GET] events
+  /events/{sport_id}/{tournament_id}:
+    get:
+      summary: Find All events
+      parameters:
+        - in: path
+          name: sport_id
+          schema:
+            type: integer
+          required: true
+          description: Sport ID params    
+        - in: path
+          name: tournament_id
+          schema:
+            type: integer
+          required: true
+          description: tournament ID params         
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+# [GET] event
+  /event/{event_id}:
+    get:
+      summary: Find full single event
+      parameters:
+        - in: path
+          name: event_id
+          schema:
+            type: integer
+          required: true
+          description: event ID params      
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+# definitions
+definitions:
+  users:
+    type: object
+    required:
+        - email
+        - password
+    properties:
+      id:
+        type: integer
+        description: user Id
+      email:
+        type: string
+        description: user Email
+      password:
+        type: string
+        description: user Password
+
+schemes:
+ - https
+ - http
