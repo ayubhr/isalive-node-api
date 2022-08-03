@@ -2,8 +2,8 @@
     "env": "development",
     "dbConfig": {
         "host": "localhost",
-        "user": "root",
-        "password": "toor",
+        "user": "isalive",
+        "password": "isalive159a",
         "database": "isalive",
         "port": 3306
     },
