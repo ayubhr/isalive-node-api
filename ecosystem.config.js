@@ -25,7 +25,7 @@ module.exports = {
     },
     {
       name: 'dev', // pm2 start App name
-      script: 'ts-node', // ts-node
+      script: './node_modules/.bin/ts-node', // ts-node
       args: '-r tsconfig-paths/register --transpile-only src/server.ts', // ts-node args
       exec_mode: 'cluster', // 'cluster' or 'fork'
       ignore_watch: ['node_modules', 'logs'], // ignore files change
