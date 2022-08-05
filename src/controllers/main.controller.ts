@@ -96,7 +96,7 @@ class MainController {
         return res.status(200).json({ status: false, message: `this host : ${fgHost} doesn't have any clean links` });
       }
 
-      res.status(200).json({ url: check_test });
+      res.status(200).json({ status: true, url: check_test });
     } catch (error) {
       next(error);
     }
