@@ -14,7 +14,7 @@ export const generateToken = () => {
 };
 
 export const cleanHost = host => {
-  return isEmpty(host) ? null : host.replace(/https|:|\/|http/g, '');
+  return isEmpty(host) ? null : host.replace(/https|:|\/|http|www./g, '');
 };
 
 export const decorateResponse = data => {
