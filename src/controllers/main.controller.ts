@@ -78,7 +78,7 @@ class MainController {
         return res.status(200).json({ status: false, message: 'token mismatch our records !' });
       }
 
-      let hostname = await Hostnames.query().select().from('hostnames').where('owner', user.id).andWhereLike('host', `%${fgHost}%`).first();
+      let hostname = await Hostnames.query().select().from('hostnames').whereLike('owner', user.id).andWhereLike('host', `%${fgHost}%`).first();
 
       if (isEmpty(hostname)) {
         return res.status(200).json({ status: false, message: `this token is stolen or host : ${fgHost} doesn't exist !` });
